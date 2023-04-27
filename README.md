@@ -1,5 +1,5 @@
-# threedy
-## Home Asssistant card for 3D printers (via OctoPrint integration)
+# threedy WIP
+## Home Asssistant card for 3D printers (PrusaLink)
 
 
 ![Featured](https://github.com/e11en/ha-threedy-card/raw/master/screenshots/active.png)
