@@ -15,8 +15,8 @@ jobs:
       - name: Build the file
         run: |
           cd /home/runner/work/ha-threedy-card-prusalink/ha-threedy-card-prusalink
-          npm install
-          npm run build
+          yarn install
+          yarn run build
 
       # Upload build file to the releas as an asset.
       - name: Upload zip to release
