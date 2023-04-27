@@ -9,7 +9,7 @@ jobs:
     name: Prepare release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       # Build
       - name: Build the file
@@ -19,12 +19,8 @@ jobs:
           yarn run build
 
       # Upload build file to the releas as an asset.
-      - name: Upload zip to release
-        uses: svenstaro/upload-release-action@v1-release
-
+      - uses: JasonEtco/upload-to-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/ha-threedy-card-prusalink/ha-threedy-card-prusalink/dist/threedy-card-prusalink.js
-          asset_name: ha-threedy-card-prusalink.js
-          tag: ${{ github.ref }}
-          overwrite: true
+          args: ./dist/threedy-card-prusalink.js text/javascript
